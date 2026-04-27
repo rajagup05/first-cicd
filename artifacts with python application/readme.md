@@ -11,3 +11,7 @@ You need to have your application code in a file named `hello.py` and a configur
 
 Build Triggers allows Cloud Build to automatically initiate the build process when specific events happen, such as code changes (e.g., a push to a branch, pull request).
 
+## cloud build trigger creation
+
+Cloud Build triggers automate your CI/CD pipeline by starting builds whenever changes are made to your source code. You can create them using the Google Cloud Console, the gcloud CLI, or Infrastructure-as-Code tools like Terraform.
+
