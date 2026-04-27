@@ -1,5 +1,5 @@
 
-## artifacts with python application
+# artifacts with python application
 
 we will set up a build trigger in Google Cloud Build to automate the CI/CD pipeline for a Python application
 
@@ -18,8 +18,11 @@ Cloud Build triggers automate your CI/CD pipeline by starting builds whenever ch
 ## 🏗️ How to Create a Trigger (Console)
 
 **Open the Triggers page:** Go to the Cloud Build Triggers page in the Google Cloud console.
+
 **Connect a Repository:** If you haven't already, click Connect Repository. Select your source (GitHub, Bitbucket, or Cloud Source Repositories) and authenticate.
+
 **Click Create Trigger:** Provide a descriptive name and select the region.
+
 **Choose the Event:** Select what action should fire the trigger:
 - **Push to a branch:** Starts a build on any commit to a specific branch (e.g., main).
 - **Push new tag:** Fires when a Git tag is created.
