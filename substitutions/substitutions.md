@@ -39,3 +39,16 @@ substitutions:
     _REPO: 'my-apps'
     _IMAGE: 'web-service'
 ```
+
+## Dynamic substitutions
+
+Dynamic substitutions allow you to use bash-style string manipulation on your variables. This is perfect for things like converting a branch name to lowercase or grabbing a specific part of a version string.
+
+### ⚙️ How to Enable
+
+Add this block to your configuration file/yaml:
+```
+options:
+  dynamicSubstitutions: true
+```
+
