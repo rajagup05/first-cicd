@@ -118,3 +118,65 @@ steps:
     export LOCAL_VAR="hello"
     echo "Bash Var: $$LOCAL_VAR" # Use double $$ for bash variables
 ```
+
+## manual mapping and auto mapping
+
+### 🤖 Automapping
+
+Automapping is the "set it and forget it" method. When enabled, Cloud Build automatically converts all substitutions into environment variables for every step.
+
+**How to enable:
+**
+yaml
+```
+options:
+  automapSubstitutions: true
+```
+
+**How it works:**
+- Built-in variables (like $PROJECT_ID) become $PROJECT_ID.
+- User-defined variables (like $_SERVICE_NAME) get an additional underscore and become $__SERVICE_NAME.
+
+**Example:**
+
+yaml
+```
+steps:
+- name: 'ubuntu'
+  script: echo "Deploying $__SERVICE_NAME to $PROJECT_ID"
+
+substitutions:
+  _SERVICE_NAME: 'my-app'
+
+options:
+  automapSubstitutions: true
+```
+
+## ✍️ Manual Mapping
+
+Manual mapping gives you total control. You explicitly define which variables are passed to which specific step using the env field.
+
+**When to use:**
+
+- You only want certain steps to see specific sensitive data.
+- You want to rename the variable (e.g., mapping $_DB_URL to DATABASE_URL).
+- You aren't using the automapSubstitutions option.
+
+**Example:**
+
+yaml
+```
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'echo "Target env is: $TARGET"']
+  env:
+  - 'TARGET=$_ENV' # Manually mapping _ENV to TARGET
+
+substitutions:
+  _ENV: 'staging'
+```
+
+
+
+
