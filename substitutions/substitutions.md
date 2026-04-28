@@ -52,3 +52,69 @@ options:
   dynamicSubstitutions: true
 ```
 
+## run bash scripts in build step
+
+To run bash scripts in a Cloud Build step, you use the script field or the bash entrypoint. Using the script field is the modern, recommended way as it handles multi-line commands cleanly.
+
+### 📝 Option 1: Using the script field (Recommended)
+
+This is the easiest way to write multi-line bash scripts directly in your YAML.
+
+yaml
+```
+steps:
+- name: 'ubuntu' # Or any image with bash installed
+  script: |
+    #!/bin/bash
+    echo "Current directory: $(pwd)"
+    if [ "$_ENV" == "prod" ]; then
+      echo "Deploying to production..."
+    else
+      echo "Deploying to staging..."
+    fi
+```
+
+### 🛠️ Option 2: Using entrypoint and args
+
+Use this if you are using an older version of Cloud Build or prefer the classic structure. You must specify bash as the entrypoint.
+
+yaml
+```
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    echo "Starting cleanup"
+    rm -rf ./temp_files
+    echo "Done!"
+```
+
+### 📂 Option 3: Running an External Script File
+If your script is complex, keep it in a .sh file in your repository. Use chmod to ensure it is executable.
+
+yaml
+```
+steps:
+- name: 'ubuntu'
+  script: |
+    chmod +x ./scripts/deploy.sh
+    ./scripts/deploy.sh
+```
+
+
+
+**Accessing Substitutions**
+
+You can use your variables directly inside the script. Use $$ to escape bash variables so Cloud Build doesn't confuse them with its own substitutions.
+
+yaml
+```
+steps:
+- name: 'ubuntu'
+  script: |
+    echo "Cloud Build Var: $_MY_VAR"
+    export LOCAL_VAR="hello"
+    echo "Bash Var: $$LOCAL_VAR" # Use double $$ for bash variables
+```
