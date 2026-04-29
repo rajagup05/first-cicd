@@ -14,3 +14,7 @@ Google Cloud Console:
 - Click Create Secret.
 - Enter a Name (e.g., MY_API_KEY).
 - Enter the Secret value and click Create.
+
+### 2. Grant Permissions to Cloud Build 
+
+Grant the Secret Manager Secret Accessor role to your project's Cloud Build service account ([PROJECT_NUMBER]@://gserviceaccount.com) in the Secret Manager IAM settings so it can read the secret. 
