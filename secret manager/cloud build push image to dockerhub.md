@@ -11,3 +11,12 @@ Store your Docker Hub username and Access Token (recommended over a password) in
 - Secret 2: docker-password (Value: your Docker Hub token) 
 
 Ensure the Cloud Build Service Account has the Secret Manager Secret Accessor role (roles/secretmanager.secretAccessor) for these secrets. 
+
+
+### 2. Configure cloudbuild.yaml 
+
+
+To push a Docker image to Docker Hub using Google Cloud Build, you need a cloudbuild.yaml file that handles authentication, building, and pushing. The most secure way to do this is by storing your Docker Hub credentials in Google Secret Manager. 
+
+Example `cloudbuild.yaml`
+This configuration logs into Docker Hub using secrets, builds your image, and pushes it:
