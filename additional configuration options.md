@@ -33,3 +33,31 @@ steps:
   waitFor: ['-'] # Also starts immediately
 ```
 
+### 2. Creating a "Fan-In" (Dependency Junction)
+
+If you have a step that depends on multiple parallel steps finishing first, list all their IDs in the waitFor array.
+
+```
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/my-project/image', '.']
+  waitFor: ['lint', 'test'] # Only runs once both lint and test succeed
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
