@@ -16,3 +16,6 @@ steps:
 # Global timeout for the entire build
 timeout: '3600s'   # 1 hour
 ```
+
+> [!NOTE]
+> Units: Values must be in seconds (e.g., 600s) or a duration string (e.g., 1h30m).
