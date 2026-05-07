@@ -13,3 +13,6 @@ By default, Cloud Build automatically manages log storage if you do not specify 
 - **Permissions:** The default Cloud Build service account is automatically granted access to write to this bucket.
 
 
+**Key Considerations**
+
+- **Cloud Logging:** In addition to Cloud Storage, build logs are streamed to Cloud Logging (formerly Stackdriver) by default, which allows for viewing in the Google Cloud Console.
