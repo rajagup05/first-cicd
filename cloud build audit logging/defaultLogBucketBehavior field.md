@@ -16,3 +16,4 @@ By default, Cloud Build automatically manages log storage if you do not specify 
 **Key Considerations**
 
 - **Cloud Logging:** In addition to Cloud Storage, build logs are streamed to Cloud Logging (formerly Stackdriver) by default, which allows for viewing in the Google Cloud Console.
+- **Customization:** You can change this behavior by specifying logging: CLOUD_LOGGING_ONLY in your build config to skip Cloud Storage entirely, or by setting a custom bucket.
