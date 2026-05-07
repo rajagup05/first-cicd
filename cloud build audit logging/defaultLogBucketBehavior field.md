@@ -10,5 +10,6 @@ By default, Cloud Build automatically manages log storage if you do not specify 
 - **Automatic Creation:** If no logsBucket is specified in the build config, Cloud Build automatically creates a Google Cloud Storage bucket in your project to store logs.
 - **Naming Convention:** The default bucket is typically named [PROJECT_ID]_cloudbuild or follows a similar regionalized pattern (e.g., gcf-v2-logs-[PROJECT_ID]-[REGION]).
 - **Location:** The bucket is located in the same region as the build.
+- **Permissions:** The default Cloud Build service account is automatically granted access to write to this bucket.
 
 
