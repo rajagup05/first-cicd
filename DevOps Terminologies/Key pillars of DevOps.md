@@ -23,5 +23,10 @@
 - Systemic Improvement: It assumes good intentions and treats incidents as opportunities to identify gaps in processes, tools, or automation.
 - Outcome: Builds trust, encouraging engineers to report issues and share knowledge rather than hiding mistakes
 
-4. breaking silos
+### 4. breaking silos
+
+- DevOps bridges the traditional gap between Development (who want changes) and Operations (who want stability).
+- Cross-functional Teams: Developers, QA, security, and operations work together, taking shared responsibility for the entire software lifecycle ("you build it, you run it").
+- Shared Goals: Misalignment is reduced by creating shared objectives and incentives, such as improving deployment frequency while maintaining stability
+
 5. measurement
