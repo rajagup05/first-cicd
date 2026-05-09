@@ -16,6 +16,12 @@
 - Infrastructure as Code (IaC): Treating infrastructure configurations as code allows for automated provisioning and environment consistency.
 - Toil Reduction: Automation specifically tackles the "toil" pillar by replacing manual intervention with self-healing systems and scripted procedures
 
-3. blamelessness
+### 3. blamelessness
+
+- A blameless culture is part of the broader DevOps culture focused on psychological safety.
+- Blameless Postmortems: When failures occur, the focus is on how the system failed, not who failed.
+- Systemic Improvement: It assumes good intentions and treats incidents as opportunities to identify gaps in processes, tools, or automation.
+- Outcome: Builds trust, encouraging engineers to report issues and share knowledge rather than hiding mistakes
+
 4. breaking silos
 5. measurement
