@@ -29,4 +29,20 @@
 - Cross-functional Teams: Developers, QA, security, and operations work together, taking shared responsibility for the entire software lifecycle ("you build it, you run it").
 - Shared Goals: Misalignment is reduced by creating shared objectives and incentives, such as improving deployment frequency while maintaining stability
 
-5. measurement
+### 5. measurement
+
+- Measurement provides visibility into what is actually happening in software delivery and operational performance.
+- DORA Metrics: Key performance indicators (KPIs) include Deployment Frequency, Change Lead Time, Change Failure Rate, and Time to Restore Service.
+- Actionable Data: Instead of vanity metrics, DevOps focuses on measurements that drive continuous improvement and highlight bottlenecks.
+
+
+
+
+
+
+
+
+
+
+
+
