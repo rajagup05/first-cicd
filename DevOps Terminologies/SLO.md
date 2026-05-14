@@ -3,7 +3,7 @@
 A Service Level Objective (SLO) in DevOps is a target value or range for a service’s reliability, defined by Service Level Indicators (SLIs) over a specific period (e.g., 99.9% uptime per month). SLOs define "acceptable" performance, bridging the gap between customer expectations and internal engineering goals to balance speed and reliability.
 
 
-**Definition & Purpose: **
+**Definition & Purpose:**
 
 SLOs help teams determine if the service is meeting its desired quality. They act as internal benchmarks rather than legal, customer-facing contracts, which are known as SLAs.
 
