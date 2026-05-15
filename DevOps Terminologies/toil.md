@@ -1,0 +1,2 @@
+
+Toil refers to administrative or operational work associated with running production services that is manual, repetitive, automatable, tactical, and lacks long-term value, often scaling linearly with service growth. In SRE (Site Reliability Engineering), it represents tasks that distract from strategic engineering work, such as manual system restarts, repetitive ticket resolution, or handling routine alerts.
