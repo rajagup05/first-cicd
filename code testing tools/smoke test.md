@@ -36,6 +36,50 @@ def test_health_check():
 
 ```
 
+### Step 2: Define your cloudbuild.yaml
+
+
+Configure your Cloud Build pipeline to install dependencies and run only the tests marked as smoke:
+
+```
+steps:
+  # Step 1: Install dependencies
+  - name: 'python:3.10'
+    entrypoint: 'pip'
+    args: ['install', '-r', 'requirements.txt']
+
+  # Step 2: Run Smoke Tests with Pytest
+  - name: 'python:3.10'
+    entrypoint: 'pytest'
+    args: ['-m', 'smoke', '--junitxml=junit.xml'] # Executes only smoke tests
+
+# Optional: Store test results in Google Cloud Storage
+artifacts:
+  objects:
+    location: 'gs://your-bucket-name/test-reports/'
+    paths:
+      - 'junit.xml'
+
+```
+
+### Step 3: Run the Build
+
+Submit your build to the cloud from your local terminal using the gcloud builds submit command:
+
+
+```
+gcloud builds submit --config cloudbuild.yaml .
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
